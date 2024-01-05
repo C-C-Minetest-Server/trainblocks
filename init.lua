@@ -1,123 +1,95 @@
-
+-- trainblocks/init.lua
+-- Adds signs fitting the advtrains theme
 --[[
+  Copyright (C) 2018  maxx, LuLa, gpcf
+  Copyright (C) 2024  1F616EMO
 
-	Trainblocks_bc
-	=============
-	This mod adds signs for the advanced trains mod by orwell and it is bachwards-compatible to the advtrains_subwayblocks mod
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
 
-	PLEASE REMOVE THE _bc IN THE MODNAME!!!
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
 
-	version 0.3 by maxx and gpcf
-
-	Copyright (C) 2018 maxx and gpcf
-
-	See LICENSE.txt for more information
-
-	History:
-	2018-03-04  version 0.1  release
-	2018-03-05  version 0.2  added better node registrations and crafting receipes
-	2018-03-06  version 0.21 added alias
-	2018-03-07  version 0.3  removed alias in trainblocks and created trainblocks_bc for bachwards-compatibility | added new signs and blocks
-	
-]]--
-
---import file /craft.lua
-
-dofile(minetest.get_modpath("trainblocks") .. "/craft.lua")
-dofile(minetest.get_modpath("trainblocks") .. "/alias.lua")
-
-
-
-
-
---subwayblock germany
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+]]
 
 minetest.register_node("trainblocks:subwayblock", {
-    description = "Subwayblock",
+	description = "Subwayblock",
 	light_source = 8,
-    tiles = {
-        "down_subwayblock.png",
-        "down_subwayblock.png",
-        "front_subwayblock.png",
-        "front_subwayblock.png",
-        "front_subwayblock.png",
-        "front_subwayblock.png"
-    },
-    is_ground_content = true,
-    groups = {cracky = 3},
-    drop = "trainblocks:subwayblock"
+	tiles = {
+		"down_subwayblock.png",
+		"down_subwayblock.png",
+		"front_subwayblock.png",
+		"front_subwayblock.png",
+		"front_subwayblock.png",
+		"front_subwayblock.png"
+	},
+	is_ground_content = true,
+	groups = { cracky = 3 },
+	drop = "trainblocks:subwayblock"
 })
-
---sbahn block
 
 minetest.register_node("trainblocks:sbahnblock", {
-    description = "Sbahnblock",
-    light_source = 8,
+	description = "Sbahnblock",
+	light_source = 8,
 	tiles = {
-        "down_sbahnblock.png",
-        "down_sbahnblock.png",
-        "front_sbahnblock.png",
-        "front_sbahnblock.png",
-        "front_sbahnblock.png",
-        "front_sbahnblock.png"
-    },
-    is_ground_content = true,
-    groups = {cracky = 3},
-    drop = "trainblocks:sbahnblock"
-})
-
---subway signs Line 1 to 10
-
---[[for count = 1, 10, 1 do  
-minetest.register_node("trainblocks:line" .. count, {    
-    description = "Line " .. count,
-	drawtype = "nodebox",
-
-    tiles = {"front_line" .. count .. ".png"},
-	inventory_image = "inventory_line" .. count .. ".png",
-	light_source = 5,
-    groups = {cracky = 3},
-	
-	paramtype2 = "facedir",
-	paramtype = 'light',
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{ -4/16, -4/16, 6/16,  4/16,  4/16, 8/16},
-		},
+		"down_sbahnblock.png",
+		"down_sbahnblock.png",
+		"front_sbahnblock.png",
+		"front_sbahnblock.png",
+		"front_sbahnblock.png",
+		"front_sbahnblock.png"
 	},
-   
+	is_ground_content = true,
+	groups = { cracky = 3 },
+	drop = "trainblocks:sbahnblock"
 })
-end --]]
 
---for bachwards-compatibility there has to be a signlike drawtype
+for count = 1, 10, 1 do
+	minetest.register_node("trainblocks:line" .. count, {
+		description = "Line " .. count,
+		tiles = { "front_line" .. count .. ".png" },
+		drawtype = "nodebox",
+		paramtype2 = "wallmounted",
+		legacy_wallmounted = true,
+		paramtype = "light",
+		light_source = 12,
+		sunlight_propagates = true,
+		is_ground_content = false,
+		walkable = false,
+		groups = { choppy = 2, attached_node = 1, flammable = 2, oddly_breakable_by_hand = 3 },
+		node_box = {
+			type = "wallmounted",
+			wall_top = { -0.5, -0.25, -0.25, -0.4375, 0.25, 0.25 },
+			wall_bottom = { -0.5, -0.25, -0.25, -0.4375, 0.25, 0.25 },
+			wall_side = { -0.5, -0.25, -0.25, -0.4375, 0.25, 0.25 },
 
-for count = 1, 10, 1 do  
- minetest.register_node("trainblocks:line" .. count, {
-			     description = "Line ".. count,
-			  tiles = {"front_line" .. count .. ".png"},
-			  drawtype = "nodebox",
-			  paramtype2 = "wallmounted",
-			  legacy_wallmounted = true,
-			  paramtype=light,
-			  light_source=12,
-			  sunlight_propagates = true,
-			  is_ground_content = false,
-			  walkable = false,
-			  
-			  groups = {choppy = 2, attached_node = 1, flammable = 2, oddly_breakable_by_hand = 3},			
-			  node_box = {
-			     type = "wallmounted",
-			     wall_top ={-0.5, -0.25, -0.25, -0.4375, 0.25, 0.25},
-			     wall_bottom = {-0.5, -0.25, -0.25, -0.4375, 0.25, 0.25},
-			     wall_side =  {-0.5, -0.25, -0.25, -0.4375, 0.25, 0.25},
-			     						     
-			  }
-			  
-   })
-   end
-   
---subway signs R and L
+		}
+	})
+
+	minetest.register_node("trainblocks:platformsign" .. count, {
+		description = "Platform Sign " .. count,
+		drawtype = "nodebox",
+		tiles = { "front_platform" .. count .. ".png" },
+		inventory_image = "inventory_platform" .. count .. ".png",
+		light_source = 5,
+		groups = { cracky = 3 },
+		paramtype2 = "facedir",
+		paramtype = 'light',
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+			},
+		},
+
+	})
+end
 
 minetest.register_node("trainblocks:subwaysignL", {
 	description = "Subway Sign Left",
@@ -133,16 +105,14 @@ minetest.register_node("trainblocks:subwaysignL", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{ -8/16, -5/16, 6/16,  8/16,  5/16, 8/16},
+			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
 		},
 	},
-		
-	
 	paramtype2 = "facedir",
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = {cracky = 3},
+	groups = { cracky = 3 },
 })
 
 minetest.register_node("trainblocks:subwaysignR", {
@@ -159,20 +129,15 @@ minetest.register_node("trainblocks:subwaysignR", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{ -8/16, -5/16, 6/16,  8/16,  5/16, 8/16},
+			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
 		},
 	},
-		
-	
 	paramtype2 = "facedir",
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = {cracky = 3},
+	groups = { cracky = 3 },
 })
-
-
---subway signs R and L
 
 minetest.register_node("trainblocks:sbahnsignL", {
 	description = "SBahn Sign Left",
@@ -188,16 +153,14 @@ minetest.register_node("trainblocks:sbahnsignL", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{ -8/16, -5/16, 6/16,  8/16,  5/16, 8/16},
+			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
 		},
 	},
-		
-	
 	paramtype2 = "facedir",
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = {cracky = 3},
+	groups = { cracky = 3 },
 })
 
 minetest.register_node("trainblocks:sbahnsignR", {
@@ -214,21 +177,15 @@ minetest.register_node("trainblocks:sbahnsignR", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{ -8/16, -5/16, 6/16,  8/16,  5/16, 8/16},
+			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
 		},
 	},
-		
-	
 	paramtype2 = "facedir",
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = {cracky = 3},
+	groups = { cracky = 3 },
 })
-
-
-
---station signs
 
 minetest.register_node("trainblocks:stationsignR", {
 	description = "Station Sign Right",
@@ -244,16 +201,14 @@ minetest.register_node("trainblocks:stationsignR", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{ -8/16, -5/16, 6/16,  8/16,  5/16, 8/16},
+			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
 		},
 	},
-		
-	
 	paramtype2 = "facedir",
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = {cracky = 3},
+	groups = { cracky = 3 },
 })
 
 minetest.register_node("trainblocks:stationsignL", {
@@ -270,74 +225,48 @@ minetest.register_node("trainblocks:stationsignL", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{ -8/16, -5/16, 6/16,  8/16,  5/16, 8/16},
+			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
 		},
 	},
-		
-	
 	paramtype2 = "facedir",
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = {cracky = 3},
+	groups = { cracky = 3 },
 })
 
 minetest.register_node("trainblocks:station_block", {
-    description = "Station Block",
-    light_source = 8,
+	description = "Station Block",
+	light_source = 8,
 	tiles = {
-        "down_station_sign.png",
-        "down_station_sign.png",
-        "front_station_sign.png",
-        "front_station_sign.png",
-        "front_station_sign.png",
-        "front_station_sign.png"
-    },
-    is_ground_content = true,
-    groups = {cracky = 3},
-    drop = "trainblocks:station_block"
-})
-
---platform signs from 1 to 10
-
-for count = 1, 10, 1 do  
-minetest.register_node("trainblocks:platformsign" .. count, {    
-    description = "Platform Sign " .. count,
-	drawtype = "nodebox",
-
-    tiles = {"front_platform" .. count .. ".png"},
-	inventory_image = "inventory_platform" .. count .. ".png",
-	light_source = 5,
-    groups = {cracky = 3},
-	
-	paramtype2 = "facedir",
-	paramtype = 'light',
-	
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{ -4/16, -4/16, 6/16,  4/16,  4/16, 8/16},
-		},
+		"down_station_sign.png",
+		"down_station_sign.png",
+		"front_station_sign.png",
+		"front_station_sign.png",
+		"front_station_sign.png",
+		"front_station_sign.png"
 	},
-   
+	is_ground_content = true,
+	groups = { cracky = 3 },
+	drop = "trainblocks:station_block"
 })
-end
-
-
---gabriel's mountain railway block
 
 minetest.register_node("trainblocks:mr", {
-    description = "Mountain Railway Block",
-    light_source = 8,
+	description = "Mountain Railway Block",
+	light_source = 8,
 	tiles = {
-			"down_mr.png",
-			"down_mr.png",
-			"front_mr.png",
-			"front_mr.png",
-			"front_mr.png",
-			"front_mr.png"
-		},
-    is_ground_content = true,
-    groups = {cracky = 3},
-    drop = "trainblocks:sbahnblock"
+		"down_mr.png",
+		"down_mr.png",
+		"front_mr.png",
+		"front_mr.png",
+		"front_mr.png",
+		"front_mr.png"
+	},
+	is_ground_content = true,
+	groups = { cracky = 3 },
+	drop = "trainblocks:sbahnblock"
 })
+
+
+dofile(minetest.get_modpath("trainblocks") .. "/craft.lua")
+dofile(minetest.get_modpath("trainblocks") .. "/alias.lua")
