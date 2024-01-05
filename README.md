@@ -1,5 +1,7 @@
 # trainblocks
 
+This mod adds advtrains-themed blocks. However, this mode can be used independently as a decoration block collection.
+
 ## History
 
 * 2018-03-04 version 0.1 release 
