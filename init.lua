@@ -64,7 +64,13 @@ for count = 1, 10, 1 do
 		sunlight_propagates = true,
 		is_ground_content = false,
 		walkable = false,
-		groups = { choppy = 2, attached_node = 1, flammable = 2, oddly_breakable_by_hand = 3 },
+		groups = {
+			choppy = 2,
+			attached_node = 1,
+			flammable = 2,
+			oddly_breakable_by_hand = 3,
+			not_blocking_trains = 1,
+		},
 		node_box = {
 			type = "wallmounted",
 			wall_top = { -0.5, -0.25, -0.25, -0.4375, 0.25, 0.25 },
@@ -80,7 +86,10 @@ for count = 1, 10, 1 do
 		tiles = { "front_platform" .. count .. ".png" },
 		inventory_image = "inventory_platform" .. count .. ".png",
 		light_source = 5,
-		groups = { cracky = 3 },
+		groups = {
+			cracky = 3,
+			not_blocking_trains = 1,
+		},
 		paramtype2 = "facedir",
 		paramtype = 'light',
 		node_box = {
@@ -114,7 +123,10 @@ minetest.register_node("trainblocks:subwaysignL", {
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = { cracky = 3 },
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
 })
 
 minetest.register_node("trainblocks:subwaysignR", {
@@ -138,7 +150,10 @@ minetest.register_node("trainblocks:subwaysignR", {
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = { cracky = 3 },
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
 })
 
 minetest.register_node("trainblocks:sbahnsignL", {
@@ -162,7 +177,10 @@ minetest.register_node("trainblocks:sbahnsignL", {
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = { cracky = 3 },
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
 })
 
 minetest.register_node("trainblocks:sbahnsignR", {
@@ -186,7 +204,10 @@ minetest.register_node("trainblocks:sbahnsignR", {
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = { cracky = 3 },
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
 })
 
 minetest.register_node("trainblocks:stationsignL", {
@@ -210,7 +231,10 @@ minetest.register_node("trainblocks:stationsignL", {
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = { cracky = 3 },
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
 })
 
 minetest.register_node("trainblocks:stationsignR", {
@@ -234,7 +258,10 @@ minetest.register_node("trainblocks:stationsignR", {
 	paramtype = 'light',
 	light_source = 6,
 	is_ground_content = false,
-	groups = { cracky = 3 },
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
 })
 
 minetest.register_node("trainblocks:station_block", {
