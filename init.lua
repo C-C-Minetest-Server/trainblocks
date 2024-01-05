@@ -18,8 +18,10 @@
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 
+local S = minetest.get_translator("trainblocks")
+
 minetest.register_node("trainblocks:subwayblock", {
-	description = "Subwayblock",
+	description = S("Subway block"),
 	light_source = 8,
 	tiles = {
 		"down_subwayblock.png",
@@ -35,7 +37,7 @@ minetest.register_node("trainblocks:subwayblock", {
 })
 
 minetest.register_node("trainblocks:sbahnblock", {
-	description = "Sbahnblock",
+	description = S("S-Bahn block"),
 	light_source = 8,
 	tiles = {
 		"down_sbahnblock.png",
@@ -52,7 +54,7 @@ minetest.register_node("trainblocks:sbahnblock", {
 
 for count = 1, 10, 1 do
 	minetest.register_node("trainblocks:line" .. count, {
-		description = "Line " .. count,
+		description = S("Line sign @1", count),
 		tiles = { "front_line" .. count .. ".png" },
 		drawtype = "nodebox",
 		paramtype2 = "wallmounted",
@@ -73,7 +75,7 @@ for count = 1, 10, 1 do
 	})
 
 	minetest.register_node("trainblocks:platformsign" .. count, {
-		description = "Platform Sign " .. count,
+		description = S("Platform sign @1", count),
 		drawtype = "nodebox",
 		tiles = { "front_platform" .. count .. ".png" },
 		inventory_image = "inventory_platform" .. count .. ".png",
@@ -92,7 +94,7 @@ for count = 1, 10, 1 do
 end
 
 minetest.register_node("trainblocks:subwaysignL", {
-	description = "Subway Sign Left",
+	description = S("Subway Sign (Left)"),
 	tiles = {
 		"subway_sign3.png",
 		"subway_sign3.png",
@@ -116,7 +118,7 @@ minetest.register_node("trainblocks:subwaysignL", {
 })
 
 minetest.register_node("trainblocks:subwaysignR", {
-	description = "Subway Sign Right",
+	description = S("Subway Sign (Right)"),
 	tiles = {
 		"subway_sign3.png",
 		"subway_sign3.png",
@@ -140,7 +142,7 @@ minetest.register_node("trainblocks:subwaysignR", {
 })
 
 minetest.register_node("trainblocks:sbahnsignL", {
-	description = "SBahn Sign Left",
+	description = S("S-Bahn Sign (Left)"),
 	tiles = {
 		"sbahn_sign3.png",
 		"sbahn_sign3.png",
@@ -164,7 +166,7 @@ minetest.register_node("trainblocks:sbahnsignL", {
 })
 
 minetest.register_node("trainblocks:sbahnsignR", {
-	description = "SBahn Sign Right",
+	description = S("S-Bahn Sign (Right)"),
 	tiles = {
 		"sbahn_sign3.png",
 		"sbahn_sign3.png",
@@ -172,30 +174,6 @@ minetest.register_node("trainblocks:sbahnsignR", {
 		"sbahn_sign3.png",
 		"sbahn_sign2.png",
 		"sbahn_sign2.png",
-	},
-	drawtype = "nodebox",
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
-		},
-	},
-	paramtype2 = "facedir",
-	paramtype = 'light',
-	light_source = 6,
-	is_ground_content = false,
-	groups = { cracky = 3 },
-})
-
-minetest.register_node("trainblocks:stationsignR", {
-	description = "Station Sign Right",
-	tiles = {
-		"station_sign3.png",
-		"station_sign3.png",
-		"station_sign3.png",
-		"station_sign3.png",
-		"station_sign2.png",
-		"station_sign2.png",
 	},
 	drawtype = "nodebox",
 	node_box = {
@@ -212,7 +190,7 @@ minetest.register_node("trainblocks:stationsignR", {
 })
 
 minetest.register_node("trainblocks:stationsignL", {
-	description = "Station Sign Left",
+	description = S("Station Sign (Left)"),
 	tiles = {
 		"station_sign3.png",
 		"station_sign3.png",
@@ -235,8 +213,32 @@ minetest.register_node("trainblocks:stationsignL", {
 	groups = { cracky = 3 },
 })
 
+minetest.register_node("trainblocks:stationsignR", {
+	description = S("Station Sign (Right)"),
+	tiles = {
+		"station_sign3.png",
+		"station_sign3.png",
+		"station_sign3.png",
+		"station_sign3.png",
+		"station_sign2.png",
+		"station_sign2.png",
+	},
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -8 / 16, -5 / 16, 6 / 16, 8 / 16, 5 / 16, 8 / 16 },
+		},
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	light_source = 6,
+	is_ground_content = false,
+	groups = { cracky = 3 },
+})
+
 minetest.register_node("trainblocks:station_block", {
-	description = "Station Block",
+	description = S("Station Block"),
 	light_source = 8,
 	tiles = {
 		"down_station_sign.png",
@@ -252,7 +254,7 @@ minetest.register_node("trainblocks:station_block", {
 })
 
 minetest.register_node("trainblocks:mr", {
-	description = "Mountain Railway Block",
+	description = S("Mountain Railway Block"),
 	light_source = 8,
 	tiles = {
 		"down_mr.png",

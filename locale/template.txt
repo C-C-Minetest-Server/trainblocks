@@ -1,0 +1,13 @@
+# textdomain: trainblocks
+Subway block=
+S-Bahn block=
+Line sign @1=
+Platform sign @1=
+Subway Sign (Left)=
+Subway Sign (Right)=
+S-Bahn Sign (Left)=
+S-Bahn Sign (Right)=
+Station Sign (Left)=
+Station Sign (Right)=
+Station Block=
+Mountain Railway Block=
