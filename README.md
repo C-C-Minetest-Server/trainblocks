@@ -1,6 +1,6 @@
 # trainblocks
 
-This mod adds advtrains-themed blocks. However, this mode can be used independently as a decoration block collection.
+This mod adds advtrains-themed blocks. However, this mod can be used independently as a decoration block collection.
 
 ![Screenshot showing all of the blocks in the mod](block_list.png)
 
