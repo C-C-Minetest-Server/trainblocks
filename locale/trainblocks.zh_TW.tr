@@ -1,4 +1,6 @@
 # textdomain: trainblocks
+
+### init.lua ###
 Subway block=地鐵方塊
 S-Bahn block=城鐵方塊
 Line sign @1=路線告示牌 @1
@@ -11,3 +13,6 @@ Station Sign (Left)=車站告示牌（左）
 Station Sign (Right)=車站告示牌（右）
 Station Block=車站方塊
 Mountain Railway Block=山區鐵路方塊
+Modern Station Sign (Left)=現代車站告示牌（左）
+Modern Station Sign (Right)=現代車站告示牌（右）
+Modern Station Block=現代車站方塊
