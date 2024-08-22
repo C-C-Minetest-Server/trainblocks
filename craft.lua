@@ -90,6 +90,22 @@ minetest.register_craft({
 	}
 })
 
+-- modern direction sign
+
+minetest.register_craft({
+	output = 'trainblocks:stationsignL_modern 2',
+	recipe = {
+		{ materials.dye_white, materials.glass, materials.dye_black },
+	}
+})
+
+minetest.register_craft({
+	output = 'trainblocks:stationsignR_modern 2',
+	recipe = {
+		{ materials.dye_black, materials.glass, materials.dye_white },
+	}
+})
+
 -- Switch betwen modern station direction signs and older style
 -- from https://github.com/Montandalar/trainblocks/commit/4f4f6004e1e5067969fcc0efd8785a55ef36a6e2
 
@@ -235,4 +251,35 @@ minetest.register_craft({
 	type = 'shapeless',
 	recipe = { 'trainblocks:station_block_modern' },
 	output = 'trainblocks:station_block'
+})
+
+-- Mountain Railway
+
+minetest.register_craft({
+	output = 'trainblocks:mr',
+	recipe = {
+		{ '',                  materials.dye_cyan, '' },
+		{ materials.dye_yellow, materials.glass,     materials.dye_green },
+		{ '',                  materials.dye_dark_green, '' },
+	}
+})
+
+-- no_pedestrians signs
+
+minetest.register_craft({
+	type = 'shapeless',
+	recipe = {
+		materials.dye_red, materials.dye_white,
+		materials.dye_black, materials.glass,
+	},
+	output = "trainblocks:no_pedestrians"
+})
+
+minetest.register_craft({
+	type = 'shapeless',
+	recipe = {
+		materials.dye_red, materials.dye_yellow,
+		materials.dye_black, materials.glass,
+	},
+	output = "trainblocks:durchgang_verboten"
 })
