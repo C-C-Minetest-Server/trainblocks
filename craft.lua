@@ -18,21 +18,23 @@
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 
+local materials = xcompat.materials
+
 minetest.register_craft({
 	output = 'trainblocks:subwayblock',
 	recipe = {
-		{ '',          'dye:blue',      '' },
-		{ 'dye:white', 'default:glass', 'dye:white' },
-		{ '',          'dye:blue',      '' },
+		{ '',                  materials.dye_blue, '' },
+		{ materials.dye_white, materials.glass,    materials.dye_white },
+		{ '',                  materials.dye_blue, '' },
 	}
 })
 
 minetest.register_craft({
 	output = 'trainblocks:sbahnblock',
 	recipe = {
-		{ '',          'dye:green',     '' },
-		{ 'dye:white', 'default:glass', 'dye:white' },
-		{ '',          'dye:green',     '' },
+		{ '',                  materials.dye_green, '' },
+		{ materials.dye_white, materials.glass,     materials.dye_white },
+		{ '',                  materials.dye_green, '' },
 	}
 })
 
@@ -43,11 +45,13 @@ local dyes1 = { "blue", "blue", "red", "violet", "green", "orange", "yellow", "g
 local dyes2 = { "blue", "white", "white", "white", "white", "white", "black", "white", "white", "white", "white" }
 
 for count = 0, 10, 1 do
+	local dye1 = materials["dye_" .. dyes1[count + 1]]
+	local dye2 = materials["dye_" .. dyes2[count + 1]]
 	minetest.register_craft({
 		output = "trainblocks:line" .. count .. " 4",
 		recipe = {
-			{ '',                     "dye:" .. dyes1[count + 1],  '' },
-			{ "dye:" .. dyes2[count + 1], 'default:glass',         '' },
+			{ '',   dye1,            '' },
+			{ dye2, materials.glass, '' },
 		}
 	})
 end
@@ -59,14 +63,14 @@ end
 minetest.register_craft({
 	output = 'trainblocks:subwaysignL 2',
 	recipe = {
-		{ 'dye:white', 'default:glass', 'dye:blue' }
+		{ materials.dye_white, materials.glass, materials.dye_blue }
 	}
 })
 
 minetest.register_craft({
 	output = 'trainblocks:subwaysignR 2',
 	recipe = {
-		{ 'dye:blue', 'default:glass', 'dye:white' },
+		{ materials.dye_blue, materials.glass, materials.dye_white },
 	}
 })
 
@@ -75,14 +79,14 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'trainblocks:sbahnsignL 2',
 	recipe = {
-		{ 'dye:white', 'default:glass', 'dye:green' },
+		{ materials.dye_white, materials.glass, materials.dye_green },
 	}
 })
 
 minetest.register_craft({
 	output = 'trainblocks:sbahnsignR 2',
 	recipe = {
-		{ 'dye:blue', 'default:glass', 'dye:green' },
+		{ materials.dye_blue, materials.glass, materials.dye_green },
 	}
 })
 
@@ -92,21 +96,21 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "shapeless",
 	output = 'trainblocks:stationsignR_modern',
-	recipe = {'trainblocks:stationsignR'}
+	recipe = { 'trainblocks:stationsignR' }
 })
 minetest.register_craft({
 	type = "shapeless",
 	output = 'trainblocks:stationsignL_modern',
-	recipe = {'trainblocks:stationsignL'}
+	recipe = { 'trainblocks:stationsignL' }
 })
 minetest.register_craft({
 	type = "shapeless",
-	recipe = {'trainblocks:stationsignR_modern'},
+	recipe = { 'trainblocks:stationsignR_modern' },
 	output = 'trainblocks:stationsignR'
 })
 minetest.register_craft({
 	type = "shapeless",
-	recipe = {'trainblocks:stationsignL_modern'},
+	recipe = { 'trainblocks:stationsignL_modern' },
 	output = 'trainblocks:stationsignL'
 })
 
@@ -116,96 +120,96 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "trainblocks:platformsign0",
 	recipe = {
-		{'dye:blue', 'default:glass', ''},
-		{'', 'dye:white', ''},
+		{ materials.dye_blue, materials.glass,     '' },
+		{ '',                 materials.dye_white, '' },
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign1",
 	recipe = {
-		{'dye:blue', 'default:glass', 'dye:white'},
-		{'', '', 'dye:white'},
-		{'', '' ,'dye:white'}
+		{ materials.dye_blue, materials.glass, materials.dye_white },
+		{ '',                 '',              materials.dye_white },
+		{ '',                 '',              materials.dye_white }
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign2",
 	recipe = {
-		{'dye:blue', 'default:glass', ''},
-		{'dye:white', 'dye:white', ''},
+		{ materials.dye_blue,  materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, '' },
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign3",
 	recipe = {
-		{'dye:blue', 'default:glass', ''},
-		{'dye:white', 'dye:white', 'dye:white'},
+		{ materials.dye_blue,  materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, materials.dye_white },
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign4",
 	recipe = {
-		{'dye:blue', 'default:glass', ''},
-		{'dye:white', 'dye:white', ''},
-		{'dye:white', 'dye:white' ,''}
+		{ materials.dye_blue,  materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, '' },
+		{ materials.dye_white, materials.dye_white, '' }
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign5",
 	recipe = {
-		{'dye:blue', 'default:glass', ''},
-		{'dye:white', 'dye:white', 'dye:white'},
-		{'dye:white', 'dye:white' ,''}
+		{ materials.dye_blue,  materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, materials.dye_white },
+		{ materials.dye_white, materials.dye_white, '' }
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign6",
 	recipe = {
-		{'dye:blue', 'default:glass', ''},
-		{'dye:white', 'dye:white', 'dye:white'},
-		{'dye:white', 'dye:white' ,'dye:white'}
+		{ materials.dye_blue,  materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, materials.dye_white },
+		{ materials.dye_white, materials.dye_white, materials.dye_white }
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign7",
 	recipe = {
-		{'dye:blue', 'default:glass', 'dye:white'},
-		{'', '', 'dye:white'},
-		{'', 'dye:white' ,''}
+		{ materials.dye_blue, materials.glass,     materials.dye_white },
+		{ '',                 '',                  materials.dye_white },
+		{ '',                 materials.dye_white, '' }
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign8",
 	recipe = {
-		{'dye:blue', 'default:glass', 'dye:white'},
-		{'dye:white', '', 'dye:white'},
-		{'dye:white', 'dye:white' ,'dye:white'}
+		{ materials.dye_blue,  materials.glass,     materials.dye_white },
+		{ materials.dye_white, '',                  materials.dye_white },
+		{ materials.dye_white, materials.dye_white, materials.dye_white }
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign9",
 	recipe = {
-		{'dye:blue', 'default:glass', 'dye:white'},
-		{'', 'dye:white', 'dye:white'},
-		{'', '' ,'dye:white'}
+		{ materials.dye_blue, materials.glass,     materials.dye_white },
+		{ '',                 materials.dye_white, materials.dye_white },
+		{ '',                 '',                  materials.dye_white }
 	}
 })
 
 minetest.register_craft({
 	output = "trainblocks:platformsign10",
 	recipe = {
-		{'dye:blue', 'default:glass', ''},
-		{'dye:white', '', ''},
-		{'dye:white', '' ,'dye:white'}
+		{ materials.dye_blue,  materials.glass, '' },
+		{ materials.dye_white, '',              '' },
+		{ materials.dye_white, '',              materials.dye_white }
 	}
 })
 
@@ -215,20 +219,20 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'trainblocks:station_block',
 	recipe = {
-		{'', 'dye:black', ''},
-		{'dye:white', 'default:glass', 'dye:white'},
-		{'', 'dye:black', ''},
+		{ '',                  materials.dye_black, '' },
+		{ materials.dye_white, materials.glass,     materials.dye_white },
+		{ '',                  materials.dye_black, '' },
 	}
 })
 
 minetest.register_craft({
 	type = 'shapeless',
 	output = 'trainblocks:station_block_modern',
-	recipe = {'trainblocks:station_block'}
+	recipe = { 'trainblocks:station_block' }
 })
 
 minetest.register_craft({
 	type = 'shapeless',
-	recipe = {'trainblocks:station_block_modern'},
+	recipe = { 'trainblocks:station_block_modern' },
 	output = 'trainblocks:station_block'
 })
