@@ -68,7 +68,10 @@ end
 for count = 0, 10, 1 do
 	minetest.register_node("trainblocks:line" .. count, {
 		description = S("Line sign @1", count),
-		tiles = { "front_line" .. count .. ".png" },
+		tiles = {
+			"front_line" .. count .. ".png",
+			"front_line" .. count .. ".png^[transformR180",
+		},
 		drawtype = "nodebox",
 		paramtype2 = "wallmounted",
 		legacy_wallmounted = true,
