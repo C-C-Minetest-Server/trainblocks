@@ -19,13 +19,13 @@
 ]]
 
 -- Switch between modern station blocks
-minetest.register_craft({
+core.register_craft({
 	type = 'shapeless',
 	output = 'trainblocks:station_block_modern',
 	recipe = { 'trainblocks:station_block' }
 })
 
-minetest.register_craft({
+core.register_craft({
 	type = 'shapeless',
 	recipe = { 'trainblocks:station_block_modern' },
 	output = 'trainblocks:station_block'
@@ -34,32 +34,32 @@ minetest.register_craft({
 -- Switch betwen modern station direction signs and older style
 -- from https://github.com/Montandalar/trainblocks/commit/4f4f6004e1e5067969fcc0efd8785a55ef36a6e2
 
-minetest.register_craft({
+core.register_craft({
 	type = "shapeless",
 	output = 'trainblocks:stationsignR_modern',
 	recipe = { 'trainblocks:stationsignR' }
 })
-minetest.register_craft({
+core.register_craft({
 	type = "shapeless",
 	output = 'trainblocks:stationsignL_modern',
 	recipe = { 'trainblocks:stationsignL' }
 })
-minetest.register_craft({
+core.register_craft({
 	type = "shapeless",
 	recipe = { 'trainblocks:stationsignR_modern' },
 	output = 'trainblocks:stationsignR'
 })
-minetest.register_craft({
+core.register_craft({
 	type = "shapeless",
 	recipe = { 'trainblocks:stationsignL_modern' },
 	output = 'trainblocks:stationsignL'
 })
 
-if not minetest.global_exists("xcompat") then return end
+if not core.global_exists("xcompat") then return end
 
 local materials = xcompat.materials
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:subwayblock',
 	recipe = {
 		{ '',                  materials.dye_blue, '' },
@@ -68,7 +68,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:sbahnblock',
 	recipe = {
 		{ '',                  materials.dye_green, '' },
@@ -86,7 +86,7 @@ local dyes2 = { "blue", "white", "white", "white", "white", "white", "black", "w
 for count = 0, 10, 1 do
 	local dye1 = materials["dye_" .. dyes1[count + 1]]
 	local dye2 = materials["dye_" .. dyes2[count + 1]]
-	minetest.register_craft({
+	core.register_craft({
 		output = "trainblocks:line" .. count .. " 4",
 		recipe = {
 			{ '',   dye1,            '' },
@@ -99,14 +99,14 @@ end
 
 --subway direction signs
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:subwaysignL 2',
 	recipe = {
 		{ materials.dye_white, materials.glass, materials.dye_blue }
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:subwaysignR 2',
 	recipe = {
 		{ materials.dye_blue, materials.glass, materials.dye_white },
@@ -115,14 +115,14 @@ minetest.register_craft({
 
 --sbahn direction signs
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:sbahnsignL 2',
 	recipe = {
 		{ materials.dye_white, materials.glass, materials.dye_green },
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:sbahnsignR 2',
 	recipe = {
 		{ materials.dye_blue, materials.glass, materials.dye_green },
@@ -131,14 +131,14 @@ minetest.register_craft({
 
 -- modern direction sign
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:stationsignL_modern 2',
 	recipe = {
 		{ materials.dye_white, materials.glass, materials.dye_black },
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:stationsignR_modern 2',
 	recipe = {
 		{ materials.dye_black, materials.glass, materials.dye_white },
@@ -148,7 +148,7 @@ minetest.register_craft({
 -- Platform signs 0-10
 -- from https://github.com/Montandalar/trainblocks/commit/f5e86f18f437ba3cb3337369d0b009e94dd5a8f5
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign0",
 	recipe = {
 		{ materials.dye_blue, materials.glass,     '' },
@@ -156,7 +156,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign1",
 	recipe = {
 		{ materials.dye_blue, materials.glass, materials.dye_white },
@@ -165,7 +165,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign2",
 	recipe = {
 		{ materials.dye_blue,  materials.glass,     '' },
@@ -173,7 +173,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign3",
 	recipe = {
 		{ materials.dye_blue,  materials.glass,     '' },
@@ -181,7 +181,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign4",
 	recipe = {
 		{ materials.dye_blue,  materials.glass,     '' },
@@ -190,7 +190,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign5",
 	recipe = {
 		{ materials.dye_blue,  materials.glass,     '' },
@@ -199,7 +199,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign6",
 	recipe = {
 		{ materials.dye_blue,  materials.glass,     '' },
@@ -208,7 +208,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign7",
 	recipe = {
 		{ materials.dye_blue, materials.glass,     materials.dye_white },
@@ -217,7 +217,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign8",
 	recipe = {
 		{ materials.dye_blue,  materials.glass,     materials.dye_white },
@@ -226,7 +226,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign9",
 	recipe = {
 		{ materials.dye_blue, materials.glass,     materials.dye_white },
@@ -235,7 +235,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "trainblocks:platformsign10",
 	recipe = {
 		{ materials.dye_blue,  materials.glass, '' },
@@ -247,7 +247,7 @@ minetest.register_craft({
 -- Recipies for (modern) station blocks
 -- from https://github.com/Montandalar/trainblocks/commit/735e61288ad55317d4fffcdb4e58b5feebc419d0
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:station_block',
 	recipe = {
 		{ '',                  materials.dye_black, '' },
@@ -258,7 +258,7 @@ minetest.register_craft({
 
 -- Mountain Railway
 
-minetest.register_craft({
+core.register_craft({
 	output = 'trainblocks:mr',
 	recipe = {
 		{ '',                  materials.dye_cyan, '' },
@@ -269,7 +269,7 @@ minetest.register_craft({
 
 -- no_pedestrians signs
 
-minetest.register_craft({
+core.register_craft({
 	type = 'shapeless',
 	recipe = {
 		materials.dye_red, materials.dye_white,
@@ -278,7 +278,7 @@ minetest.register_craft({
 	output = "trainblocks:no_pedestrians"
 })
 
-minetest.register_craft({
+core.register_craft({
 	type = 'shapeless',
 	recipe = {
 		materials.dye_red, materials.dye_yellow,

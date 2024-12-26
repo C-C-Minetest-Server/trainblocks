@@ -19,9 +19,9 @@
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 
-local S = minetest.get_translator("trainblocks")
+local S = core.get_translator("trainblocks")
 
-minetest.register_node("trainblocks:subwayblock", {
+core.register_node("trainblocks:subwayblock", {
 	description = S("Subway block"),
 	light_source = 8,
 	tiles = {
@@ -42,11 +42,11 @@ do
 	-- from https://github.com/Montandalar/trainblocks/commit/0fa3f52123bfe5aea386f987e7204c94aba72725
 
 	local sbahncolorize = ""
-	if minetest.settings:get_bool("trainblocks_legacy_sbahnblock", false) then
+	if core.settings:get_bool("trainblocks_legacy_sbahnblock", false) then
 		sbahncolorize = "^[colorize:#00DF11FF"
 	end --00E876FF
 
-	minetest.register_node("trainblocks:sbahnblock", {
+	core.register_node("trainblocks:sbahnblock", {
 		description = S("S-Bahn block"),
 		light_source = 8,
 		tiles = {
@@ -66,7 +66,7 @@ end
 -- Platform 0 from https://github.com/Montandalar/trainblocks/commit/12a365d1c280d2b106621a8088229ee50937c488
 -- Bonus: Line 0
 for count = 0, 10, 1 do
-	minetest.register_node("trainblocks:line" .. count, {
+	core.register_node("trainblocks:line" .. count, {
 		description = S("Line sign @1", count),
 		tiles = {
 			"front_line" .. count .. ".png",
@@ -95,7 +95,7 @@ for count = 0, 10, 1 do
 		}
 	})
 
-	minetest.register_node("trainblocks:platformsign" .. count, {
+	core.register_node("trainblocks:platformsign" .. count, {
 		description = S("Platform sign @1", count),
 		drawtype = "nodebox",
 		tiles = { "front_platform" .. count .. ".png" },
@@ -117,7 +117,7 @@ for count = 0, 10, 1 do
 	})
 end
 
-minetest.register_node("trainblocks:subwaysignL", {
+core.register_node("trainblocks:subwaysignL", {
 	description = S("Subway Sign (Left)"),
 	tiles = {
 		"subway_sign3.png",
@@ -144,7 +144,7 @@ minetest.register_node("trainblocks:subwaysignL", {
 	},
 })
 
-minetest.register_node("trainblocks:subwaysignR", {
+core.register_node("trainblocks:subwaysignR", {
 	description = S("Subway Sign (Right)"),
 	tiles = {
 		"subway_sign3.png",
@@ -171,7 +171,7 @@ minetest.register_node("trainblocks:subwaysignR", {
 	},
 })
 
-minetest.register_node("trainblocks:sbahnsignL", {
+core.register_node("trainblocks:sbahnsignL", {
 	description = S("S-Bahn Sign (Left)"),
 	tiles = {
 		"sbahn_sign3.png",
@@ -198,7 +198,7 @@ minetest.register_node("trainblocks:sbahnsignL", {
 	},
 })
 
-minetest.register_node("trainblocks:sbahnsignR", {
+core.register_node("trainblocks:sbahnsignR", {
 	description = S("S-Bahn Sign (Right)"),
 	tiles = {
 		"sbahn_sign3.png",
@@ -225,7 +225,7 @@ minetest.register_node("trainblocks:sbahnsignR", {
 	},
 })
 
-minetest.register_node("trainblocks:stationsignL", {
+core.register_node("trainblocks:stationsignL", {
 	description = S("Station Sign (Left)"),
 	tiles = {
 		"station_sign3.png",
@@ -252,7 +252,7 @@ minetest.register_node("trainblocks:stationsignL", {
 	},
 })
 
-minetest.register_node("trainblocks:stationsignR", {
+core.register_node("trainblocks:stationsignR", {
 	description = S("Station Sign (Right)"),
 	tiles = {
 		"station_sign3.png",
@@ -279,7 +279,7 @@ minetest.register_node("trainblocks:stationsignR", {
 	},
 })
 
-minetest.register_node("trainblocks:station_block", {
+core.register_node("trainblocks:station_block", {
 	description = S("Station Block"),
 	light_source = 8,
 	tiles = {
@@ -295,7 +295,7 @@ minetest.register_node("trainblocks:station_block", {
 	drop = "trainblocks:station_block"
 })
 
-minetest.register_node("trainblocks:mr", {
+core.register_node("trainblocks:mr", {
 	description = S("Mountain Railway Block"),
 	light_source = 8,
 	tiles = {
@@ -314,7 +314,7 @@ minetest.register_node("trainblocks:mr", {
 -- Modern station blocks
 -- from https://github.com/Montandalar/trainblocks/commit/12a365d1c280d2b106621a8088229ee50937c488
 
-minetest.register_node("trainblocks:stationsignL_modern", {
+core.register_node("trainblocks:stationsignL_modern", {
 	description = S("Modern Station Sign (Left)"),
 	tiles = {
 		"station_sign3.png",
@@ -339,7 +339,7 @@ minetest.register_node("trainblocks:stationsignL_modern", {
 	groups = { cracky = 3 },
 })
 
-minetest.register_node("trainblocks:stationsignR_modern", {
+core.register_node("trainblocks:stationsignR_modern", {
 	description = S("Modern Station Sign (Right)"),
 	tiles = {
 		"station_sign3.png",
@@ -364,7 +364,7 @@ minetest.register_node("trainblocks:stationsignR_modern", {
 	groups = { cracky = 3 },
 })
 
-minetest.register_node("trainblocks:station_block_modern", {
+core.register_node("trainblocks:station_block_modern", {
 	description = S("Modern Station Block"),
 	light_source = 8,
 	tiles = {
@@ -395,7 +395,7 @@ local pedsigns = {
 }
 
 for _, v in pairs(pedsigns) do
-	minetest.register_node("trainblocks:" .. v.name, {
+	core.register_node("trainblocks:" .. v.name, {
 		description = v.desc,
 		light_source = 2,
 		drawtype = "signlike",
@@ -417,8 +417,8 @@ end
 
 -- Add a setting to disable crafting recipes
 -- from https://github.com/Montandalar/trainblocks/commit/15e2b88f44671aa68d1a758a6aca363b602a1282
-if not minetest.settings:get_bool('trainblocks_disable_recipes', false) then
-	dofile(minetest.get_modpath("trainblocks") .. "/craft.lua")
+if not core.settings:get_bool('trainblocks_disable_recipes', false) then
+	dofile(core.get_modpath("trainblocks") .. "/craft.lua")
 end
 
-dofile(minetest.get_modpath("trainblocks") .. "/alias.lua")
+dofile(core.get_modpath("trainblocks") .. "/alias.lua")

@@ -19,8 +19,8 @@
 ]]
 
 for count = 1, 10, 1 do
-	minetest.register_alias("advtrains_subwayblocks:line" .. count, "trainblocks:line" .. count)
+	core.register_alias("advtrains_subwayblocks:line" .. count, "trainblocks:line" .. count)
 end
 
-minetest.register_alias("advtrains_subwayblocks:germany", "trainblocks:subwayblock")
-minetest.register_alias("advtrains_subwayblocks:mr", "trainblocks:mr")
+core.register_alias("advtrains_subwayblocks:germany", "trainblocks:subwayblock")
+core.register_alias("advtrains_subwayblocks:mr", "trainblocks:mr")
