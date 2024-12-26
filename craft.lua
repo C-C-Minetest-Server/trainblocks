@@ -18,6 +18,45 @@
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ]]
 
+-- Switch between modern station blocks
+minetest.register_craft({
+	type = 'shapeless',
+	output = 'trainblocks:station_block_modern',
+	recipe = { 'trainblocks:station_block' }
+})
+
+minetest.register_craft({
+	type = 'shapeless',
+	recipe = { 'trainblocks:station_block_modern' },
+	output = 'trainblocks:station_block'
+})
+
+-- Switch betwen modern station direction signs and older style
+-- from https://github.com/Montandalar/trainblocks/commit/4f4f6004e1e5067969fcc0efd8785a55ef36a6e2
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'trainblocks:stationsignR_modern',
+	recipe = { 'trainblocks:stationsignR' }
+})
+minetest.register_craft({
+	type = "shapeless",
+	output = 'trainblocks:stationsignL_modern',
+	recipe = { 'trainblocks:stationsignL' }
+})
+minetest.register_craft({
+	type = "shapeless",
+	recipe = { 'trainblocks:stationsignR_modern' },
+	output = 'trainblocks:stationsignR'
+})
+minetest.register_craft({
+	type = "shapeless",
+	recipe = { 'trainblocks:stationsignL_modern' },
+	output = 'trainblocks:stationsignL'
+})
+
+if not minetest.global_exists("xcompat") then return end
+
 local materials = xcompat.materials
 
 minetest.register_craft({
@@ -104,30 +143,6 @@ minetest.register_craft({
 	recipe = {
 		{ materials.dye_black, materials.glass, materials.dye_white },
 	}
-})
-
--- Switch betwen modern station direction signs and older style
--- from https://github.com/Montandalar/trainblocks/commit/4f4f6004e1e5067969fcc0efd8785a55ef36a6e2
-
-minetest.register_craft({
-	type = "shapeless",
-	output = 'trainblocks:stationsignR_modern',
-	recipe = { 'trainblocks:stationsignR' }
-})
-minetest.register_craft({
-	type = "shapeless",
-	output = 'trainblocks:stationsignL_modern',
-	recipe = { 'trainblocks:stationsignL' }
-})
-minetest.register_craft({
-	type = "shapeless",
-	recipe = { 'trainblocks:stationsignR_modern' },
-	output = 'trainblocks:stationsignR'
-})
-minetest.register_craft({
-	type = "shapeless",
-	recipe = { 'trainblocks:stationsignL_modern' },
-	output = 'trainblocks:stationsignL'
 })
 
 -- Platform signs 0-10
@@ -239,18 +254,6 @@ minetest.register_craft({
 		{ materials.dye_white, materials.glass,     materials.dye_white },
 		{ '',                  materials.dye_black, '' },
 	}
-})
-
-minetest.register_craft({
-	type = 'shapeless',
-	output = 'trainblocks:station_block_modern',
-	recipe = { 'trainblocks:station_block' }
-})
-
-minetest.register_craft({
-	type = 'shapeless',
-	recipe = { 'trainblocks:station_block_modern' },
-	output = 'trainblocks:station_block'
 })
 
 -- Mountain Railway
