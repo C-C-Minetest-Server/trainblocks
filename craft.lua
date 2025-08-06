@@ -244,6 +244,71 @@ core.register_craft({
 	}
 })
 
+-- Direction signs
+
+core.register_craft({
+	output = "trainblocks:dir_st_front",
+	recipe = {
+		{ '',                 materials.dye_white, '' },
+		{ '',                 materials.dye_white, '' },
+		{ materials.dye_blue, materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:dir_st_left",
+	recipe = {
+		{ '',                  '',                  '' },
+		{ materials.dye_white, materials.dye_white, '' },
+		{ materials.dye_blue,  materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:dir_st_right",
+	recipe = {
+		{ '',                 '',                  '' },
+		{ '',                 materials.dye_white, materials.dye_white },
+		{ materials.dye_blue, materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:dir_cr_left",
+	recipe = {
+		{ materials.dye_white, '',                  '' },
+		{ '',                  materials.dye_white, '' },
+		{ materials.dye_blue,  materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:dir_cr_right",
+	recipe = {
+		{ '',                 '',                  materials.dye_white },
+		{ '',                 materials.dye_white, '' },
+		{ materials.dye_blue, materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:dir_uturn_l",
+	recipe = {
+		{ '',                  materials.dye_white, materials.dye_white },
+		{ materials.dye_white, '',                  materials.dye_white },
+		{ materials.dye_blue,  materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:dir_uturn_r",
+	recipe = {
+		{ materials.dye_white, materials.dye_white, '' },
+		{ materials.dye_white, '',                  materials.dye_white },
+		{ materials.dye_blue,  materials.glass,     materials.dye_blue },
+	}
+})
+
 -- Recipies for (modern) station blocks
 -- from https://github.com/Montandalar/trainblocks/commit/735e61288ad55317d4fffcdb4e58b5feebc419d0
 

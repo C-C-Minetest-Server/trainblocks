@@ -117,6 +117,147 @@ for count = 0, 10, 1 do
 	})
 end
 
+-- Direction signs
+
+core.register_node("trainblocks:dir_st_front", {
+	description = S("Straight arrow sign (front)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_st.png" },
+	inventory_image = "inventory_dir_st.png",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+
+core.register_node("trainblocks:dir_st_left", {
+	description = S("Straight arrow sign (left)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_st.png^[transformFXR90" },
+	inventory_image = "inventory_dir_st.png^[transformFXR90",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+
+core.register_node("trainblocks:dir_st_right", {
+	description = S("Straight arrow sign (right)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_st.png^[transformR270" },
+	inventory_image = "inventory_dir_st.png^[transformR270",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+
+core.register_node("trainblocks:dir_cr_left", {
+	description = S("Curved arrow sign (left)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_cr.png" },
+	inventory_image = "inventory_dir_cr.png",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+core.register_node("trainblocks:dir_cr_right", {
+	description = S("Curved arrow sign (right)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_cr.png^[transformFX" },
+	inventory_image = "inventory_dir_cr.png^[transformFX",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+
+core.register_node("trainblocks:dir_uturn_l", {
+	description = S("U-turn sign (left)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_uturn.png" },
+	inventory_image = "inventory_dir_uturn.png",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+
+core.register_node("trainblocks:dir_uturn_r", {
+	description = S("U-turn sign (right)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_uturn.png^[transformFX" },
+	inventory_image = "inventory_dir_uturn.png^[transformFX",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+
 core.register_node("trainblocks:subwaysignL", {
 	description = S("Subway Sign (Left)"),
 	tiles = {
