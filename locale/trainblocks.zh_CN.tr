@@ -1,10 +1,19 @@
 # textdomain: trainblocks
 
-### init.lua ###
+##[ init.lua ]##
 Subway block=地下铁方块
 S-Bahn block=城铁方块
 Line sign @1=路线指示牌 @1
 Platform sign @1=月台指示牌 @1
+Straight arrow sign (front)=
+Straight arrow sign (left)=
+Straight arrow sign (right)=
+Curved arrow sign (left, top)=
+Curved arrow sign (right, top)=
+Curved arrow sign (left, bottom)=
+Curved arrow sign (right, bottom)=
+U-turn sign (left)=
+U-turn sign (right)=
 Subway Sign (Left)=地下铁指示牌（左）
 Subway Sign (Right)=地下铁指示牌（右）
 S-Bahn Sign (Left)=城铁指示牌（左）
