@@ -292,6 +292,24 @@ core.register_craft({
 })
 
 core.register_craft({
+	output = "trainblocks:dir_cr_left_bottom",
+	recipe = {
+		{ '',                  materials.dye_white, '' },
+		{ materials.dye_white, '',                  '' },
+		{ materials.dye_blue,  materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:dir_cr_right_bottom",
+	recipe = {
+		{ '',                 materials.dye_white, '' },
+		{ '',                 '',                  materials.dye_white },
+		{ materials.dye_blue, materials.glass,     materials.dye_blue },
+	}
+})
+
+core.register_craft({
 	output = "trainblocks:dir_uturn_l",
 	recipe = {
 		{ '',                  materials.dye_white, materials.dye_white },

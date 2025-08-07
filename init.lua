@@ -180,7 +180,7 @@ core.register_node("trainblocks:dir_st_right", {
 })
 
 core.register_node("trainblocks:dir_cr_left", {
-	description = S("Curved arrow sign (left)"),
+	description = S("Curved arrow sign (left, top)"),
 	drawtype = "nodebox",
 	tiles = { "front_dir_cr.png" },
 	inventory_image = "inventory_dir_cr.png",
@@ -199,10 +199,49 @@ core.register_node("trainblocks:dir_cr_left", {
 	},
 })
 core.register_node("trainblocks:dir_cr_right", {
-	description = S("Curved arrow sign (right)"),
+	description = S("Curved arrow sign (right, top)"),
 	drawtype = "nodebox",
 	tiles = { "front_dir_cr.png^[transformFX" },
 	inventory_image = "inventory_dir_cr.png^[transformFX",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+
+core.register_node("trainblocks:dir_cr_left_bottom", {
+	description = S("Curved arrow sign (left, bottom)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_cr.png^[transformFY" },
+	inventory_image = "inventory_dir_cr.png^[transformFY",
+	light_source = 5,
+	groups = {
+		cracky = 3,
+		not_blocking_trains = 1,
+	},
+	paramtype2 = "facedir",
+	paramtype = 'light',
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+		},
+	},
+})
+core.register_node("trainblocks:dir_cr_right_bottom", {
+	description = S("Curved arrow sign (right, bottom)"),
+	drawtype = "nodebox",
+	tiles = { "front_dir_cr.png^[transformR180" },
+	inventory_image = "inventory_dir_cr.png^[transformR180",
 	light_source = 5,
 	groups = {
 		cracky = 3,
