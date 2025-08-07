@@ -125,7 +125,7 @@ end
 core.register_node("trainblocks:dir_st_front", {
 	description = S("Straight arrow sign (front)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_st.png" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_st.png" },
 	inventory_image = "inventory_dir_st.png",
 	light_source = 5,
 	groups = {
@@ -145,7 +145,7 @@ core.register_node("trainblocks:dir_st_front", {
 core.register_node("trainblocks:dir_st_left", {
 	description = S("Straight arrow sign (left)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_st.png^[transformFXR90" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_st.png^[transformFXR90" },
 	inventory_image = "inventory_dir_st.png^[transformFXR90",
 	light_source = 5,
 	groups = {
@@ -165,7 +165,7 @@ core.register_node("trainblocks:dir_st_left", {
 core.register_node("trainblocks:dir_st_right", {
 	description = S("Straight arrow sign (right)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_st.png^[transformR270" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_st.png^[transformR270" },
 	inventory_image = "inventory_dir_st.png^[transformR270",
 	light_source = 5,
 	groups = {
@@ -185,7 +185,7 @@ core.register_node("trainblocks:dir_st_right", {
 core.register_node("trainblocks:dir_cr_left", {
 	description = S("Curved arrow sign (left, top)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_cr.png" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_cr.png" },
 	inventory_image = "inventory_dir_cr.png",
 	light_source = 5,
 	groups = {
@@ -204,7 +204,7 @@ core.register_node("trainblocks:dir_cr_left", {
 core.register_node("trainblocks:dir_cr_right", {
 	description = S("Curved arrow sign (right, top)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_cr.png^[transformFX" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_cr.png^[transformFX" },
 	inventory_image = "inventory_dir_cr.png^[transformFX",
 	light_source = 5,
 	groups = {
@@ -224,7 +224,7 @@ core.register_node("trainblocks:dir_cr_right", {
 core.register_node("trainblocks:dir_cr_left_bottom", {
 	description = S("Curved arrow sign (left, bottom)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_cr.png^[transformFY" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_cr.png^[transformFY" },
 	inventory_image = "inventory_dir_cr.png^[transformFY",
 	light_source = 5,
 	groups = {
@@ -243,7 +243,7 @@ core.register_node("trainblocks:dir_cr_left_bottom", {
 core.register_node("trainblocks:dir_cr_right_bottom", {
 	description = S("Curved arrow sign (right, bottom)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_cr.png^[transformR180" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_cr.png^[transformR180" },
 	inventory_image = "inventory_dir_cr.png^[transformR180",
 	light_source = 5,
 	groups = {
@@ -263,7 +263,7 @@ core.register_node("trainblocks:dir_cr_right_bottom", {
 core.register_node("trainblocks:dir_uturn_l", {
 	description = S("U-turn sign (left)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_uturn.png" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_uturn.png" },
 	inventory_image = "inventory_dir_uturn.png",
 	light_source = 5,
 	groups = {
@@ -283,7 +283,7 @@ core.register_node("trainblocks:dir_uturn_l", {
 core.register_node("trainblocks:dir_uturn_r", {
 	description = S("U-turn sign (right)"),
 	drawtype = "nodebox",
-	tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_dir_uturn.png^[transformFX" },
+	tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_dir_uturn.png^[transformFX" },
 	inventory_image = "inventory_dir_uturn.png^[transformFX",
 	light_source = 5,
 	groups = {
