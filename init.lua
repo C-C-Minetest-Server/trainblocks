@@ -66,11 +66,14 @@ end
 -- Platform 0 from https://github.com/Montandalar/trainblocks/commit/12a365d1c280d2b106621a8088229ee50937c488
 -- Bonus: Line 0
 for count = 0, 10, 1 do
+	local line_base_image =
+		"inventory_line" .. count ..
+		".png^[sheet:8x8:0,0^[resize:16x16^[combine:16x16:4,4=inventory_line" .. count .. ".png"
 	core.register_node("trainblocks:line" .. count, {
 		description = S("Line sign @1", count),
 		tiles = {
-			"front_line" .. count .. ".png",
-			"front_line" .. count .. ".png^[transformR180",
+			line_base_image,
+			line_base_image .. "^[transformR180",
 		},
 		drawtype = "nodebox",
 		paramtype2 = "wallmounted",
@@ -98,7 +101,7 @@ for count = 0, 10, 1 do
 	core.register_node("trainblocks:platformsign" .. count, {
 		description = S("Platform sign @1", count),
 		drawtype = "nodebox",
-		tiles = { "front_platform_signs.png^[combine:16x16:4,4=inventory_platform" .. count .. ".png" },
+		tiles = { "front_platform_signs.png^[resize:16x16^[combine:16x16:4,4=inventory_platform" .. count .. ".png" },
 		inventory_image = "inventory_platform" .. count .. ".png",
 		light_source = 5,
 		groups = {
