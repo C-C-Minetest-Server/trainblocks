@@ -120,6 +120,35 @@ for count = 0, 10, 1 do
 	})
 end
 
+-- exit signs
+for _, exit_id in ipairs({ "a", "b", "c", "d" }) do
+	for exit_no = 0, 3, 1 do
+		core.register_node("trainblocks:exit_" .. exit_id .. exit_no, {
+			description = S("Exit sign @1", exit_id:upper() .. (exit_no ~= 0 and tostring(exit_no) or "")),
+			drawtype = "nodebox",
+			tiles = {
+				"front_exit_signs.png^[resize:16x16^[combine:16x16:4,4=exit_"
+				.. exit_id .. exit_no .. ".png"
+			},
+			inventory_image = "exit_" .. exit_id .. exit_no .. ".png",
+			light_source = 5,
+			groups = {
+				cracky = 3,
+				not_blocking_trains = 1,
+				["trainblocks_exit_sign_" .. exit_id .. "_sub"] = exit_no ~= 0 and 1 or nil,
+			},
+			paramtype2 = "facedir",
+			paramtype = 'light',
+			node_box = {
+				type = "fixed",
+				fixed = {
+					{ -4 / 16, -4 / 16, 6 / 16, 4 / 16, 4 / 16, 8 / 16 },
+				},
+			},
+		})
+	end
+end
+
 -- Direction signs
 
 core.register_node("trainblocks:dir_st_front", {

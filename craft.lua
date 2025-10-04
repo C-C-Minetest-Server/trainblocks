@@ -244,6 +244,59 @@ core.register_craft({
 	}
 })
 
+-- Exit signs
+
+core.register_craft({
+	output = "trainblocks:exit_a0",
+	recipe = {
+		{ materials.dye_green, materials.glass, '' },
+		{ materials.dye_white, '',              '' },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:exit_b0",
+	recipe = {
+		{ materials.dye_green, materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, '' },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:exit_c0",
+	recipe = {
+		{ materials.dye_green, materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, materials.dye_white },
+	}
+})
+
+core.register_craft({
+	output = "trainblocks:exit_d0",
+	recipe = {
+		{ materials.dye_green, materials.glass,     '' },
+		{ materials.dye_white, materials.dye_white, materials.dye_white },
+		{ materials.dye_white, '',                  '' },
+	}
+})
+
+for _, exit_id in ipairs({ "a", "b", "c", "d" }) do
+	core.register_craft({
+		type = "shapeless",
+		output = "trainblocks:exit_" .. exit_id .. "0",
+		recipe = { "group:trainblocks_exit_sign_" .. exit_id .. "_sub" },
+	})
+
+	local sub_recipe = { "trainblocks:exit_" .. exit_id .. "0" }
+	for i = 1, 3 do
+		table.insert(sub_recipe, materials.dye_white)
+		core.register_craft({
+			type = "shapeless",
+			output = "trainblocks:exit_" .. exit_id .. tostring(i),
+			recipe = table.copy(sub_recipe),
+		})
+	end
+end
+
 -- Direction signs
 
 core.register_craft({
